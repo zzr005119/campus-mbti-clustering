@@ -1,0 +1,798 @@
+{
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "runs": [
+        {
+          "text": "",
+          "bold": null,
+          "font_name": null,
+          "font_size": "177800",
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "text": "本 科 生 课 程 报 告 封 面",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "runs": [
+        {
+          "text": "本 科 生 课 程 报 告 封 面",
+          "bold": true,
+          "font_name": null,
+          "font_size": "279400",
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 3,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 4,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "",
+          "bold": null,
+          "font_name": null,
+          "font_size": null,
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "注：",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "注：",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "1、报告中所有红色字体部分为解释说明，提交论文时请删除！",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "1、报告中所有红色字体部分为解释说明，提交论文时请删除！",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "2、本报告与《机器学习实验》课程报告主题一致，但侧重理论与分析，因此题目中可使用“优化”、“分析”、“研究”等词（可包括但不限于）。",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "2、本报告与《机器学习实验》课程报告主题一致，但侧重理论与分析，因此题目中可使用“优化”、“分析”、“研究”等词（可包括但不限于）。",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "3、报告可使用AI和网上资料作为辅助学习，但不可直接将AI的内容复制粘贴，否则成绩无效！",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "3、报告可使用AI和网上资料作为辅助学习，但不可直接将AI的内容复制粘贴，否则成绩无效！",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "人员分配：（简述本项目的人员分配情况，每个同学都要在本报告的撰写中体现工作量，作为评分依据）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "人员分配：",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（简述本项目的人员分配情况，每个同学都要在",
+          "bold": false,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "本报告的撰写中",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        },
+        {
+          "text": "体现工作量，作为评分依据）",
+          "bold": false,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 11,
+      "text": "摘要：（概括研究主题、理论基础、核心结论）（150-250字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "摘要：",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "概括研究主题、理论基础、核心结论",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "150-250字）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 13,
+      "text": "关键词：3-5个关键词（如“KNN算法”、“鸢尾花分类”、“距离度量”，用逗号隔开）。",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "关键词",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "：",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "3-5个关键词（",
+          "bold": false,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "如“KNN算法”",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "、",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "“鸢尾花分类”",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "、",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "“距离度量”",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "，",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "用逗号隔开",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）。",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 15,
+      "text": "选题背景与研究意义（阐述选题的实际应用场景（如 “物流配送优化的行业需求”）、理论价值（如 “验证聚类算法的适用性”），结合课程核心理论说明研究必要性。）（200-300字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "选题背景与研究意义",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "阐述选题的实际应用场景（如 “物流配送优化的行业需求”）、理论价值（如 “验证聚类算法的适用性”），结合课程核心理论说明研究必要性。",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（200-300字）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 17,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 18,
+      "text": "相关理论与算法基础（系统阐述选题涉及的机器学习理论（如K-Means聚类原理、线性回归数学模型）、算法推导过程（如损失函数求解、参数优化逻辑）、核心要素（如K值选择、核函数作用），体现对理论知识的掌握。）（400-600字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "相关理论与算法基础",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "系统阐述选题涉及的机器学习理论（如K-Means聚类原理、线性回归数学模型）、算法推导过程（如损失函数求解、参数优化逻辑）、核心要素（如K值选择、核函数作用），体现对理论知识的掌握。",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "400-600字",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 20,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 21,
+      "text": "理论分析与方案设计（基于理论基础设计研究方案（如“不同距离度量方法对KNN分类效果的影响分析”），明确研究假设、变量定义、理论框架，体现对复杂问题的建模能力。）（300-400字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "理论分析与方案设计",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "基于理论基础设计研究方案（如“不同距离度量方法对KNN分类效果的影响分析”），明确研究假设、变量定义、理论框架，体现对复杂问题的建模能力",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "。）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "300-400字",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 23,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 24,
+      "text": "应用场景与效果分析（分析算法的适用场景、优缺点及优化方向（如“逻辑回归在小样本数据中的优势与局限性”），结合实际案例说明理论的实践价值）（300-400字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "应用场景与效果分析",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "分析算法的适用场景、优缺点及优化方向（如“逻辑回归在小样本数据中的优势与局限性”），结合实际案例说明理论的实践价值",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "300-400字",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 26,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 27,
+      "text": "结论与展望（总结理论分析结论，明确算法的理论价值与应用边界，提出未来可深入研究的方向（如“结合深度学习优化传统聚类算法”）。）（150-250字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "结论与展望",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "总结理论分析结论，明确算法的理论价值与应用边界，提出未来可深入研究的方向（如“结合深度学习优化传统聚类算法”）。",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "150-250字",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 29,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 30,
+      "text": "参考文献（规范引用课程教材、学术论文等资料，格式符合学术规范，参考GB/T 7714格式，中英文都要有）（5-10篇）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "参考文献",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "规范引用课程教材、学术论文等资料，格式符合学术规范",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "，",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "参考GB",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "/T 7714",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "格式，中英文都要有",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "5-10篇",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    }
+  ],
+  "tables": [
+    {
+      "index": 0,
+      "rows": 7,
+      "cols": 2,
+      "data": [
+        [
+          "课程名称：",
+          "机器学习"
+        ],
+        [
+          "课程编码：",
+          "2351302"
+        ],
+        [
+          "报告题目：",
+          ""
+        ],
+        [
+          "学    号：",
+          ""
+        ],
+        [
+          "姓    名：",
+          ""
+        ],
+        [
+          "班    级：",
+          ""
+        ],
+        [
+          "授课教师：",
+          "曾梦"
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "rows": 5,
+      "cols": 9,
+      "data": [
+        [
+          "评分标准及分值",
+          "评分标准及分值",
+          "选题契合\n（分值20）",
+          "选题契合\n（分值20）",
+          "理论阐述\n（分值30）",
+          "理论阐述\n（分值30）",
+          "应用分析\n（分值30）",
+          "应用分析\n（分值30）",
+          "报告规范\n（分值20）"
+        ],
+        [
+          "评分",
+          "评分",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整"
+        ],
+        [
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n"
+        ],
+        [
+          "总 评 分",
+          "",
+          "",
+          "评阅教师:",
+          "评阅教师:",
+          "",
+          "",
+          "评阅时间\n2026年 月 日",
+          "评阅时间\n2026年 月 日"
+        ]
+      ]
+    }
+  ]
+}

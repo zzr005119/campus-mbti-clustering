@@ -1,0 +1,10 @@
+
+if __name__ == "__main__":
+    print("=" * 60)
+    print("Generating Course Report...")
+    gen_course_report()
+    print("=" * 60)
+    print("Generating Experiment Report...")
+    gen_exp_report()
+    print("=" * 60)
+    print("ALL DONE! Both reports generated successfully.")

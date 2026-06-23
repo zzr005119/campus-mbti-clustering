@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFAFB"/>
+      <stop offset="50%" stop-color="#FFF0F3"/>
+      <stop offset="100%" stop-color="#FFE8EC"/>
+    </linearGradient>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B8A"/>
+      <stop offset="100%" stop-color="#FF8095"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bgGrad)"/>
+
+  <!-- Memphis geometric shapes -->
+  <circle cx="1100" cy="180" r="150" fill="#FFD93D" fill-opacity="0.85"/>
+  <circle cx="1100" cy="180" r="120" fill="none" stroke="#2D3436" stroke-width="3"/>
+  <circle cx="1180" cy="140" r="20" fill="#2D3436"/>
+  <circle cx="1050" cy="240" r="10" fill="#2D3436"/>
+  <circle cx="1140" cy="260" r="14" fill="#2D3436"/>
+
+  <!-- Triangle bottom-left -->
+  <polygon points="80,620 200,720 0,720" fill="#A29BFE" fill-opacity="0.7"/>
+  <polygon points="200,580 320,720 120,720" fill="#00D2D3" fill-opacity="0.6"/>
+
+  <!-- Wavy line across middle -->
+  <path d="M 0,380 Q 80,340 160,380 Q 240,420 320,380 Q 400,340 480,380 Q 560,420 640,380 Q 720,340 800,380 Q 880,420 960,380 Q 1040,340 1120,380 Q 1200,420 1280,380" fill="none" stroke="#FF6B8A" stroke-width="6" stroke-opacity="0.4"/>
+
+  <!-- Polka dots scattered -->
+  <circle cx="180" cy="120" r="12" fill="#FFD93D" fill-opacity="0.5"/>
+  <circle cx="250" cy="200" r="8" fill="#00D2D3" fill-opacity="0.4"/>
+  <circle cx="950" cy="580" r="10" fill="#A29BFE" fill-opacity="0.5"/>
+  <circle cx="600" cy="160" r="6" fill="#FF6B8A" fill-opacity="0.3"/>
+
+  <!-- Small geometric accents -->
+  <rect x="100" y="300" width="40" height="40" fill="#FFD93D" fill-opacity="0.5" rx="4"/>
+  <rect x="160" y="340" width="30" height="30" fill="#00D2D3" fill-opacity="0.4" rx="3"/>
+  <rect x="1100" y="500" width="50" height="50" fill="#A29BFE" fill-opacity="0.4" rx="5"/>
+  <rect x="1160" y="530" width="35" height="35" fill="#FF6B8A" fill-opacity="0.35" rx="3"/>
+
+  <!-- Zigzag bottom -->
+  <polyline points="0,700 40,680 80,700 120,680 160,700 200,680 240,700 280,680 320,700 360,680 400,700 440,680 480,700 520,680 560,700 600,680 640,700 680,680 720,700 760,680 800,700 840,680 880,700 920,680 960,700 1000,680 1040,700 1080,680 1120,700 1160,680 1200,700 1240,680 1280,700" fill="none" stroke="#2D3436" stroke-width="3" stroke-opacity="0.15"/>
+
+  <!-- Title box -->
+  <rect x="80" y="160" width="700" height="180" fill="#2D3436" rx="12"/>
+  <text x="430" y="240" text-anchor="middle" font-family="Arial Black, Microsoft YaHei, sans-serif" font-size="52" fill="#FFFAFB" font-weight="bold">校园搭子推荐系统</text>
+  <text x="430" y="290" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="22" fill="#FFD93D">基于MBTI心理特质与微观消费特征的智能匹配</text>
+
+  <!-- Subtitle line -->
+  <rect x="80" y="370" width="500" height="4" fill="#FF6B8A"/>
+  <rect x="80" y="380" width="300" height="4" fill="#00D2D3"/>
+
+  <!-- Info -->
+  <text x="80" y="430" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="20" fill="#636E72">机器学习课程大作业</text>
+  <text x="80" y="460" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="16" fill="#B2BEC3">K-Means Clustering + Random Forest + Recommendation System</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="700" width="1280" height="20" fill="#2D3436"/>
+  <text x="1240" y="714" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="11" fill="#636E72">2026.06</text>
+</svg>

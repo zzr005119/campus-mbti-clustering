@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>校园搭子推荐系统</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js"></script>
+<style>*{margin:0;padding:0;box-sizing:border-box;font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif}
+body{background:linear-gradient(135deg,#FFF0F3 0%,#FFE4E9 30%,#FFF5F7 60%,#FDE8EC 100%);min-height:100vh;color:#5D4E5F;overflow-x:hidden}
+
+/* ====== 飘浮背景粒子 ====== */
+.bg-particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bg-particle{position:absolute;animation:float-up linear infinite;filter:drop-shadow(0 0 3px rgba(255,154,162,0.4))}
+@keyframes float-up{0%{transform:translateY(105vh) rotate(0deg) scale(0);opacity:0}8%{opacity:.5}85%{opacity:.35}100%{transform:translateY(-10vh) rotate(360deg) scale(1.3);opacity:0}}
+
+.header{background:linear-gradient(135deg,#FFB6C1 0%,#FF9AA2 40%,#FFB7B2 100%);padding:18px 20px;text-align:center;box-shadow:0 4px 20px rgba(255,154,162,0.25);position:relative;overflow:hidden;z-index:1}
+.header::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 60%);animation:shimmer 6s infinite}
+@keyframes shimmer{0%,100%{transform:translate(0,0)}50%{transform:translate(5%,5%)}}
+.header h1{color:#fff;font-size:1.6rem;font-weight:700;letter-spacing:2px;position:relative;z-index:1;text-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.header p{color:rgba(255,255,255,0.9);font-size:.85rem;margin-top:4px;position:relative;z-index:1}
+
+.container{display:flex;gap:16px;padding:16px 20px;max-width:1400px;margin:0 auto;height:calc(100vh - 100px);align-items:stretch;position:relative;z-index:1}
+
+.col-left{flex:0 0 280px;display:flex;flex-direction:column}
+.col-center{flex:1 1 auto;display:flex;flex-direction:column;gap:14px;min-width:300px;overflow-y:auto}
+.col-right{flex:0 0 360px;display:flex;flex-direction:column;overflow-y:auto}
+
+/* 自定义滚动条 */
+.col-center::-webkit-scrollbar,.col-right::-webkit-scrollbar{width:5px}
+.col-center::-webkit-scrollbar-track,.col-right::-webkit-scrollbar-track{background:transparent}
+.col-center::-webkit-scrollbar-thumb,.col-right::-webkit-scrollbar-thumb{background:#FFD1D9;border-radius:10px}
+.col-center::-webkit-scrollbar-thumb:hover,.col-right::-webkit-scrollbar-thumb:hover{background:#FFB6C1}
+
+.card{background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);border-radius:16px;padding:20px 18px;box-shadow:0 6px 24px rgba(255,154,162,0.1);border:1px solid rgba(255,182,193,0.3);transition:transform .3s,box-shadow .3s;position:relative}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,154,162,0.18)}
+.card h3{color:#FF8095;font-size:1.05rem;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+
+.form-group{margin-bottom:10px}
+.form-group label{display:block;font-size:.8rem;color:#A0869A;margin-bottom:3px;font-weight:500}
+.form-group select{width:100%;padding:8px 12px;border:2px solid #FDDDE6;border-radius:10px;font-size:.85rem;color:#5D4E5F;background:#FFFBFD;transition:all .3s;cursor:pointer}
+.form-group select:focus{outline:none;border-color:#FFB6C1;box-shadow:0 0 0 3px rgba(255,182,193,0.2)}
+.form-row{display:flex;gap:8px}
+.form-row .form-group{flex:1}
+.btn{width:100%;padding:12px;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;transition:all .3s;letter-spacing:1px;margin-top:8px;position:relative}
+.btn-primary{background:linear-gradient(135deg,#FF6B8A,#FF8095);color:#fff;box-shadow:0 0 0 0 rgba(255,107,138,0.6);animation:btn-pulse 2s ease-in-out infinite}
+.btn-primary:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 24px rgba(255,107,138,0.5);animation:none}
+.btn-primary:active{transform:scale(0.97)}
+@keyframes btn-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,138,0.6)}50%{box-shadow:0 0 20px 6px rgba(255,107,138,0.45)}}
+
+.scene-selector{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.scene-chip{padding:7px 12px;border:2px solid #FDDDE6;border-radius:16px;cursor:pointer;font-size:.8rem;transition:all .3s;background:#fff;user-select:none;position:relative;overflow:hidden}
+.scene-chip::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#FFB6C1,#FF9AA2);opacity:0;transition:opacity .3s;z-index:0}
+.scene-chip:hover{border-color:#FFB6C1;transform:translateY(-1px)}
+.scene-chip.active{color:#fff;border-color:transparent;box-shadow:0 3px 12px rgba(255,154,162,0.3)}
+.scene-chip.active::before{opacity:1}
+.scene-chip span{position:relative;z-index:1}
+
+.cluster-badge{display:inline-block;padding:8px 18px;border-radius:24px;color:#fff;font-weight:700;font-size:1rem;letter-spacing:1px;margin-bottom:6px;animation:popIn .5s ease}
+@keyframes popIn{0%{transform:scale(0);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+.cluster-desc{color:#A0869A;font-size:.82rem;line-height:1.5;margin-bottom:6px;animation:fadeIn .6s .1s both}
+.meta-tag{display:inline-block;background:#FFF0F3;color:#FF8095;padding:2px 10px;border-radius:16px;font-size:.75rem;margin-right:4px;animation:popIn .5s .15s both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+.mbti-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
+.mbti-item{background:linear-gradient(135deg,#FFF0F3,#FFE4E9);border-radius:12px;padding:10px 8px;text-align:center;transition:transform .2s,box-shadow .2s;animation:fadeIn .4s both}
+.mbti-item:hover{transform:scale(1.05);box-shadow:0 4px 16px rgba(255,154,162,0.2)}
+.mbti-item:nth-child(1){animation-delay:0s}.mbti-item:nth-child(2){animation-delay:.1s}.mbti-item:nth-child(3){animation-delay:.2s}.mbti-item:nth-child(4){animation-delay:.3s}
+.mbti-item .dim-label{font-size:.7rem;color:#B89BA5;margin-bottom:2px}
+.mbti-item .dim-value{font-size:1.1rem;font-weight:700;color:#FF6B8A}
+.mbti-big{text-align:center;font-size:1.6rem;font-weight:800;color:#FF6B8A;margin:4px 0 8px;letter-spacing:3px;animation:fadeIn .4s both}
+
+.match-card{background:rgba(255,255,255,0.7);border-radius:12px;padding:12px 14px;margin-bottom:10px;border-left:4px solid #FFB6C1;transition:all .25s;animation:slideUp .5s both}
+.match-card:nth-child(1){animation-delay:0s}.match-card:nth-child(2){animation-delay:.08s}.match-card:nth-child(3){animation-delay:.16s}.match-card:nth-child(4){animation-delay:.24s}.match-card:nth-child(5){animation-delay:.32s}
+.match-card:hover{transform:translateX(8px) scale(1.02);box-shadow:0 8px 24px rgba(255,154,162,0.22);border-left-color:#FF8095}
+.match-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.match-rank{font-size:1.1rem;font-weight:800;color:#FF8095}
+.match-score{background:linear-gradient(135deg,#FFB6C1,#FF9AA2);color:#fff;padding:4px 14px;border-radius:16px;font-weight:700;font-size:.85rem;transition:transform .3s}
+.match-card:hover .match-score{transform:scale(1.08)}
+.match-info{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem;color:#7A6B7B;margin-bottom:4px}
+.match-info span{background:#FFF5F7;padding:2px 8px;border-radius:10px}
+.match-bar{display:flex;gap:6px;font-size:.7rem;color:#B89BA5;align-items:center}
+.match-bar .score-label{white-space:nowrap}
+.progress-bg{flex:1;height:5px;background:#FFE4E9;border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#FFB6C1,#FF9AA2);border-radius:3px;transition:width .8s ease}
+
+.section-label{font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:#C4A8B4;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #FDDDE6;display:flex;align-items:center;gap:4px}
+
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#FF6B8A,#FF8095);color:#fff;padding:10px 28px;border-radius:24px;font-weight:600;z-index:999;opacity:0;transition:opacity .4s,transform .4s;pointer-events:none;font-size:.9rem;box-shadow:0 8px 24px rgba(255,107,138,0.3)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:1000px){.container{flex-direction:column;height:auto}.col-left,.col-center,.col-right{flex:auto;width:100%}.col-right{max-height:500px}}
+
+/* ====== 骨架屏 ====== */
+.skeleton{background:linear-gradient(90deg,#FFE4E9 25%,#FFF0F3 50%,#FFE4E9 75%);background-size:200% 100%;animation:skeleton-wave 1.5s ease-in-out infinite;border-radius:10px}
+@keyframes skeleton-wave{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.sk-badge{width:120px;height:36px;border-radius:24px;margin-bottom:10px}
+.sk-line{height:14px;margin-bottom:8px;width:100%}
+.sk-line.short{width:65%}
+.sk-chart{width:100%;height:220px;border-radius:12px;margin-top:12px}
+.sk-mbti-big{width:80px;height:28px;margin:4px auto 12px;border-radius:8px}
+.sk-mbti-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
+.sk-mbti-item{height:60px;border-radius:12px}
+.sk-match{height:80px;border-radius:12px;margin-bottom:10px;border-left:4px solid #FDDDE6}
+.sk-match:nth-child(2){width:92%}.sk-match:nth-child(3){width:85%}.sk-match:nth-child(4){width:78%}.sk-match:nth-child(5){width:70%}
+#skeletonCenter,#skeletonRight{display:none}
+#skeletonCenter.show,#skeletonRight.show{display:block}
+
+/* ====== 引导层 ====== */
+.onboard-overlay{position:fixed;inset:0;background:rgba(93,78,95,0.55);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+.onboard-overlay.show{opacity:1;pointer-events:auto}
+.onboard-card{background:#fff;border-radius:20px;padding:32px 28px 24px;max-width:440px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);position:relative;animation:onboard-in .5s ease}
+@keyframes onboard-in{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.onboard-step{display:none}
+.onboard-step.active{display:block}
+.onboard-icon{font-size:3rem;margin-bottom:12px}
+.onboard-card h3{color:#FF6B8A;font-size:1.2rem;margin-bottom:8px}
+.onboard-card p{color:#A0869A;font-size:.9rem;line-height:1.6;margin-bottom:20px}
+.onboard-dots{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
+.onboard-dot{width:10px;height:10px;border-radius:50%;background:#FDDDE6;transition:all .3s}
+.onboard-dot.active{background:#FF8095;width:26px;border-radius:5px}
+.onboard-btns{display:flex;gap:10px;justify-content:center}
+.onboard-btn{padding:10px 28px;border-radius:12px;font-weight:600;cursor:pointer;font-size:.9rem;transition:all .3s;border:none}
+.onboard-btn.primary{background:linear-gradient(135deg,#FFB6C1,#FF9AA2);color:#fff}
+.onboard-btn.primary:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(255,154,162,0.4)}
+.onboard-btn.ghost{background:transparent;color:#C4A8B4}
+.onboard-btn.ghost:hover{color:#FF8095}
+
+/* 计数器弹跳 */
+.counter-bounce{display:inline-block;animation:countBounce .5s ease}
+@keyframes countBounce{0%{transform:scale(0)}60%{transform:scale(1.25)}100%{transform:scale(1)}}
+</style>
+</head>
+<body>
+
+<!-- 飘浮背景 -->
+<div class="bg-particles" id="bgParticles"></div>
+
+<!-- ====== 首次使用引导 ====== -->
+<div class="onboard-overlay" id="onboardOverlay">
+<div class="onboard-card">
+<div class="onboard-step active"><div class="onboard-icon"></div><h3>欢迎使用校园搭子推荐系统</h3><p>只需三个简单步骤，发现最适合你的校园搭子</p></div>
+<div class="onboard-step"><div class="onboard-icon"></div><h3>Step 1 填写消费画像</h3><p>在左侧选择你的每月各类消费水平与偏好场景，越准确匹配越精准</p></div>
+<div class="onboard-step"><div class="onboard-icon"></div><h3>Step 2 点击开始分析</h3><p>系统会用机器学习模型为你定位消费群体、预测MBTI性格</p></div>
+<div class="onboard-step"><div class="onboard-icon"></div><h3>Step 3 查看搭子推荐</h3><p>右侧会显示TOP-5最佳匹配——综合消费相似度、预算匹配和MBTI互补</p></div>
+<div class="onboard-dots"><div class="onboard-dot active"></div><div class="onboard-dot"></div><div class="onboard-dot"></div><div class="onboard-dot"></div></div>
+<div class="onboard-btns"><button class="onboard-btn ghost" id="onboardSkip">跳过</button><button class="onboard-btn primary" id="onboardNext">下一步</button></div>
+</div>
+</div>
+
+<div class="header">
+<h1>校园搭子推荐系统</h1>
+<p>基于MBTI心理特质与微观消费特征的智能匹配</p>
+</div>
+
+<div class="container">
+
+<!-- ====== 左栏: 消费画像 ====== -->
+<div class="col-left">
+<div class="card">
+<h3>你的消费画像</h3>
+<div class="form-group">
+<label>每月餐饮伙食</label>
+<select id="food"><option value="1">&lt;600元</option><option value="2" selected>600-900元</option><option value="3">901-1200元</option><option value="4">&gt;1200元</option></select>
+</div>
+<div class="form-group">
+<label>每月社交娱乐</label>
+<select id="social"><option value="1" selected>&lt;100元</option><option value="2">100-300元</option><option value="3">301-500元</option><option value="4">&gt;500元</option></select>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>服饰美妆</label>
+<select id="fashion"><option value="1" selected>几乎不花</option><option value="2">100-300元</option><option value="3">301-500元</option><option value="4">&gt;500元</option></select>
+</div>
+<div class="form-group">
+<label>学习发展</label>
+<select id="study"><option value="1">几乎不花</option><option value="2" selected>&lt;50元</option><option value="3">50-150元</option><option value="4">&gt;150元</option></select>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>数码游戏</label>
+<select id="digital"><option value="1">几乎不花</option><option value="2" selected>&lt;100元</option><option value="3">100-300元</option><option value="4">&gt;300元</option></select>
+</div>
+<div class="form-group">
+<label>兴趣投入</label>
+<select id="hobby"><option value="1">佛系不花</option><option value="2" selected>偶尔小额</option><option value="3">高额投入</option></select>
+</div>
+</div>
+<div class="form-group">
+<label>月生活费</label>
+<select id="budget"><option value="1">&le;1000</option><option value="2">1001-1500</option><option value="3" selected>1501-2000</option><option value="4">2001-3000</option><option value="5">&gt;3000</option></select>
+</div>
+<div class="form-group">
+<label>偏好结伴场景</label>
+<div class="scene-selector" id="sceneSelector">
+<div class="scene-chip active" data-val="1"><span>图书馆+简餐</span></div>
+<div class="scene-chip" data-val="2"><span>美食探店</span></div>
+<div class="scene-chip" data-val="3"><span>户外运动</span></div>
+<div class="scene-chip" data-val="4"><span>游戏/展演</span></div>
+</div>
+</div>
+<button class="btn btn-primary" id="btnAnalyze"><span style="margin-right:6px"></span>开始分析</button>
+</div>
+</div>
+
+<!-- ====== 中栏 ====== -->
+<div class="col-center" id="colCenter">
+<div class="card empty-state" id="emptyState">
+<div style="font-size:3.5rem;margin-bottom:12px"></div>
+<p>在左侧填写消费画像<br>点击「开始分析」查看结果</p>
+</div>
+
+<div id="skeletonCenter">
+<div class="card">
+<div class="section-label">消费群体标签</div>
+<div class="skeleton sk-badge"></div><div class="skeleton sk-line"></div><div class="skeleton sk-line short"></div><div class="skeleton sk-chart"></div>
+</div>
+<div class="card">
+<div class="section-label">MBTI 性格预测</div>
+<div class="skeleton sk-mbti-big"></div>
+<div class="sk-mbti-grid"><div class="skeleton sk-mbti-item"></div><div class="skeleton sk-mbti-item"></div><div class="skeleton sk-mbti-item"></div><div class="skeleton sk-mbti-item"></div></div>
+</div>
+</div>
+
+<div id="colResults" style="display:none;flex-direction:column;gap:14px">
+<div class="card">
+<div class="section-label">消费群体标签</div>
+<div id="clusterBadge"></div><div id="clusterDesc"></div>
+<canvas id="radarChart"></canvas>
+</div>
+<div class="card">
+<div class="section-label">MBTI 性格预测</div>
+<div class="mbti-big" id="mbtiBig"></div><div class="mbti-grid" id="mbtiGrid"></div>
+<p style="color:#C4A8B4;font-size:.7rem;margin-top:8px;text-align:center">预测基于62份样本训练的随机森林模型，仅供参考</p>
+</div>
+</div>
+</div>
+
+<!-- ====== 右栏 ====== -->
+<div class="col-right" id="colRight">
+<div class="card" style="height:100%;display:flex;flex-direction:column">
+<div class="section-label">TOP-5 最佳匹配搭子</div>
+<div id="skeletonRight"><div class="skeleton sk-match"></div><div class="skeleton sk-match"></div><div class="skeleton sk-match"></div><div class="skeleton sk-match"></div><div class="skeleton sk-match"></div></div>
+<div id="matchList" style="flex:1;overflow-y:auto"><p style="color:#C4A8B4;text-align:center;padding-top:40px;font-size:.9rem">等待分析结果...</p></div>
+</div>
+</div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ====== Chart.js 加载检测 ======
+if(typeof Chart==='undefined'){
+  document.body.innerHTML='<div style="text-align:center;padding-top:100px;color:#FF6B8A;font-family:sans-serif"><h2> Chart.js 加载失败</h2><p>请检查网络连接后刷新页面</p><p style="font-size:.8rem;color:#999;margin-top:20px">CDN: cdn.jsdelivr.net</p></div>';
+  throw new Error('Chart.js not loaded');
+}
+
+var radarChart = null;
+var selectedScene = 1;
+
+// ====== 飘浮背景粒子 (独立于Chart.js) ======
+(function initParticles(){
+  var container = document.getElementById('bgParticles');
+  if(!container) return;
+  var shapes = [
+    '<svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" fill="#FFB6C1" opacity="0.5"/></svg>',
+    '<svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 14s-7-4.5-7-9a4 4 0 017-2 4 4 0 017 2c0 4.5-7 9-7 9z" fill="#FF9AA2" opacity="0.5"/></svg>',
+    '<svg width="14" height="14" viewBox="0 0 14 14"><polygon points="7,0 9,5 14,5 10,8 11,14 7,11 3,14 4,8 0,5 5,5" fill="#FFB7B2" opacity="0.5"/></svg>',
+    '<svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#FFD1D9" stroke-width="2" opacity="0.5"/></svg>',
+    '<svg width="12" height="12" viewBox="0 0 12 12"><circle cx="6" cy="6" r="5" fill="#FF8095" opacity="0.4"/></svg>'
+  ];
+  for(var i=0;i<22;i++){
+    var p = document.createElement('div');
+    p.className = 'bg-particle';
+    p.innerHTML = shapes[Math.floor(Math.random()*shapes.length)];
+    p.style.left = Math.random()*96 + '%';
+    p.style.width = (10+Math.random()*20) + 'px';
+    p.style.height = p.style.width;
+    p.style.animationDuration = (10+Math.random()*16) + 's';
+    p.style.animationDelay = Math.random()*12 + 's';
+    container.appendChild(p);
+  }
+})();
+
+// ====== 场景选择 ======
+document.getElementById('sceneSelector').addEventListener('click', function(e) {
+  var chip = e.target.closest('.scene-chip');
+  if (!chip) return;
+  document.querySelectorAll('.scene-chip').forEach(function(c) { c.classList.remove('active'); });
+  chip.classList.add('active');
+  selectedScene = parseInt(chip.getAttribute('data-val'));
+});
+
+// ====== Toast ======
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2500);
+}
+
+// ====== 数字滚动动画 ======
+function animateCount(el, target, duration){
+  var start = null;
+  function step(ts){
+    if(!start) start = ts;
+    var progress = Math.min((ts-start)/duration, 1);
+    var eased = 1 - Math.pow(1-progress, 3);
+    el.textContent = Math.round(eased*target) + '%';
+    if(progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ====== 分析按钮 ======
+document.getElementById('btnAnalyze').addEventListener('click', function(){ analyze(); });
+
+function showSkeleton(){
+  document.getElementById('emptyState').style.display='none';
+  document.getElementById('colResults').style.display='none';
+  document.getElementById('skeletonCenter').classList.add('show');
+  document.getElementById('skeletonRight').classList.add('show');
+}
+function hideSkeleton(){
+  document.getElementById('skeletonCenter').classList.remove('show');
+  document.getElementById('skeletonRight').classList.remove('show');
+}
+
+async function analyze(){
+  showSkeleton();
+
+  var data={
+    food:parseInt(document.getElementById('food').value),
+    social:parseInt(document.getElementById('social').value),
+    fashion:parseInt(document.getElementById('fashion').value),
+    study:parseInt(document.getElementById('study').value),
+    digital:parseInt(document.getElementById('digital').value),
+    budget:parseInt(document.getElementById('budget').value),
+    hobby:parseInt(document.getElementById('hobby').value),
+    scene:selectedScene
+  };
+
+  try{
+    var resp=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    var result=await resp.json();
+    if(result.error){showToast(result.error);hideSkeleton();return;}
+    setTimeout(function(){
+      try{
+        renderCluster(result.cluster,result.user_consume);
+        renderMBTI(result.mbti,result.mbti_str);
+        renderMatches(result.matches);
+        hideSkeleton();
+        document.getElementById('colResults').style.display='flex';
+        setTimeout(function(){
+          document.querySelectorAll('.match-score .counter-bounce').forEach(function(el,i){
+            var t = parseInt(el.getAttribute('data-target'));
+            if(t>0) animateCount(el,t,500+i*60);
+          });
+        },150);
+      }catch(renderErr){
+        console.error('Render error:',renderErr);
+        hideSkeleton();
+        showToast('渲染失败: '+renderErr.message);
+      }
+    },400);
+  }catch(e){
+    console.error('API error:',e);
+    hideSkeleton();
+    document.getElementById('emptyState').style.display='block';
+    showToast('网络错误，请检查后端是否启动');
+  }
+}
+
+function renderCluster(cluster,userConsume){
+  document.getElementById('clusterBadge').innerHTML='<span class="cluster-badge" style="background:'+cluster.color+'">'+cluster.name+'</span> <span class="meta-tag">共 '+cluster.size+' 人</span>';
+  document.getElementById('clusterDesc').innerHTML='<p class="cluster-desc">'+cluster.description+'</p>';
+  var ctx=document.getElementById('radarChart').getContext('2d');
+  if(radarChart) radarChart.destroy();
+  radarChart=new Chart(ctx,{
+    type:'radar',
+    data:{
+      labels:['  餐饮','  社交','  服饰','  学习','  数码'],
+      datasets:[{
+        label:'  你',data:userConsume.slice(0,5),borderColor:'#FF6B8A',backgroundColor:'rgba(255,107,138,0.12)',borderWidth:2.5,pointBackgroundColor:'#FF6B8A',pointRadius:5,pointHoverRadius:7
+      },{
+        label:'  '+cluster.name+'均值',data:cluster.mean,borderColor:'#B8A9C9',backgroundColor:'rgba(184,169,201,0.08)',borderWidth:2,borderDash:[5,3],pointBackgroundColor:'#B8A9C9',pointRadius:4
+      }]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:true,
+      plugins:{legend:{position:'bottom',labels:{padding:14,usePointStyle:true,pointStyleWidth:10,font:{size:11}}}},
+      scales:{r:{beginAtZero:true,max:4.5,ticks:{stepSize:1,backdropColor:'transparent',font:{size:9}},grid:{color:'rgba(255,182,193,0.2)'},angleLines:{color:'rgba(255,182,193,0.2)'},pointLabels:{font:{size:10,weight:'500'}}}}
+    }
+  });
+}
+
+function renderMBTI(mbti,mbtiStr){
+  document.getElementById('mbtiBig').textContent=mbtiStr;
+  var dimDisplay={'E_I_精力恢复':'E/I 精力恢复','S_N_信息处理':'S/N 信息处理','T_F_决策标准':'T/F 决策标准','J_P_生活风格':'J/P 生活风格'};
+  var html='';
+  for(var key in mbti){
+    html+='<div class="mbti-item"><div class="dim-label">'+dimDisplay[key]+'</div><div class="dim-value">'+mbti[key]+'</div></div>';
+  }
+  document.getElementById('mbtiGrid').innerHTML=html;
+}
+
+function renderMatches(matches){
+  var sceneLabels={1:'图书馆+简餐',2:'美食探店',3:'户外运动',4:'游戏/展演'};
+  var html='';
+  matches.forEach(function(m,i){
+    html+='<div class="match-card">'+
+      '<div class="match-header">'+
+        '<span class="match-rank">#'+(i+1)+'</span>'+
+        '<span class="match-score"><span class="counter-bounce" data-target="'+Math.round(m.total*100)+'">0%</span></span>'+
+      '</div>'+
+      '<div class="match-info">'+
+        '<span>MBTI: '+m.mbti+'</span>'+
+        '<span>'+m.cluster_name+'</span>'+
+        '<span>'+ (sceneLabels[m.scene_pref]||'?')+'</span>'+
+      '</div>'+
+      '<div class="match-bar">'+
+        '<span class="score-label">相似 '+Math.round(m.sim*100)+'%</span>'+
+        '<span class="score-label">预算 '+Math.round(m.budget*100)+'%</span>'+
+        '<span class="score-label">互补 '+Math.round(m.complement*100)+'%</span>'+
+        '<span class="score-label">场景 '+Math.round(m.scene*100)+'%</span>'+
+      '</div>'+
+      '<div class="match-bar" style="margin-top:4px">'+
+        '<div class="progress-bg"><div class="progress-fill" style="width:'+Math.round(m.total*100)+'%"></div></div>'+
+        '<span style="font-size:.7rem;white-space:nowrap">月预算档'+m.monthly_budget+'</span>'+
+      '</div>'+
+    '</div>';
+  });
+  document.getElementById('matchList').innerHTML=html;
+}
+
+// ====== 首次引导 ======
+(function(){
+  var KEY='campus_buddy_onboarded';
+  if(localStorage.getItem(KEY))return;
+  localStorage.setItem(KEY,'1');
+  var steps=4;var cur=0;
+  var overlay=document.getElementById('onboardOverlay');
+  var stepEls=document.querySelectorAll('.onboard-step');
+  var dots=document.querySelectorAll('.onboard-dot');
+  function go(n){
+    stepEls[cur].classList.remove('active');dots[cur].classList.remove('active');
+    cur=n;stepEls[cur].classList.add('active');dots[cur].classList.add('active');
+    if(cur===steps-1){document.getElementById('onboardNext').textContent='开始使用';document.getElementById('onboardSkip').style.display='none';}
+  }
+  document.getElementById('onboardNext').addEventListener('click',function(){
+    if(cur<steps-1)go(cur+1);else overlay.classList.remove('show');
+  });
+  document.getElementById('onboardSkip').addEventListener('click',function(){overlay.classList.remove('show');});
+  overlay.classList.add('show');go(0);
+})();
+</script>
+</body>
+</html>

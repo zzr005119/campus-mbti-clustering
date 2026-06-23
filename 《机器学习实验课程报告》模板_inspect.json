@@ -1,0 +1,602 @@
+{
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "runs": [
+        {
+          "text": "",
+          "bold": null,
+          "font_name": null,
+          "font_size": "177800",
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "text": "本 科 生 课 程 报 告 封 面",
+      "style": "Normal",
+      "alignment": "CENTER (1)",
+      "runs": [
+        {
+          "text": "本 科 生 课 程 报 告 封 面",
+          "bold": true,
+          "font_name": null,
+          "font_size": "279400",
+          "color": null
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 3,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 4,
+      "text": "注：",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "",
+          "bold": null,
+          "font_name": null,
+          "font_size": null,
+          "color": null
+        },
+        {
+          "text": "注：",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "text": "1、报告中所有红色字体部分为解释说明，提交论文时请删除！",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "1、报告中所有红色字体部分为解释说明，提交论文时请删除！",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "text": "2、本报告与《机器学习》课程报告主题一致，但侧重代码与实操，因此题目中可以增加“实现”、“应用”等词（可包括但不限于）。",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "2、本报告与《机器学习》课程报告主题一致，但侧重代码与实操，因此题目中可以增加“实现”、“应用”等词（可包括但不限于）。",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "text": "3、报告可使用AI和网上资料作为辅助学习，但不可直接将AI的内容复制粘贴，否则成绩无效！",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "3、报告可使用AI和网上资料作为辅助学习，但不可直接将AI的内容复制粘贴，否则成绩无效！",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "text": "人员分配：（简述本项目的人员分配情况，每个同学都要在本报告的撰写中体现工作量，作为评分依据）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "人员分配：",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（简述本项目的人员分配情况，每个同学都要在",
+          "bold": false,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "本报告的撰写中",
+          "bold": true,
+          "font_name": null,
+          "font_size": "177800",
+          "color": "FF0000"
+        },
+        {
+          "text": "体现工作量，作为评分依据）",
+          "bold": false,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 10,
+      "text": "摘要：（概括实验主题、核心任务（如“实现K-Means物流配送聚类”）、实验目标（如“掌握算法代码实现、结果可视化方法”）。）（150-250字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "摘要：",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（概括实验主题、核心任务（如“实现K-Means物流配送聚类”）、实验目标（如“掌握算法代码实现、结果可视化方法”）。",
+          "bold": false,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "150-250字",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 12,
+      "text": "关键词：3-5个关键词",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "关键词",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "：",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "3-5个关键词",
+          "bold": false,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 14,
+      "text": "实验环境与技术准备（说明实验所使用的开发环境（Anaconda、PyCharm）、Python库（sklearn、numpy、matplotlib）、数据集来源（如公开数据集、模拟数据集），体现实验准备的完整性。）（150-250字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "实验环境与技术准备",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（说明实验所使用的开发环境（Anaconda、PyCharm）、Python库（sklearn、numpy、matplotlib）、数据集来源（如公开数据集、模拟数据集），体现实验准备的完整性。）（150-250字）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 16,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 17,
+      "text": "实验原理与实验方案（简要概述实验涉及的算法原理（无需重复理论推导），明确实验步骤（如“数据预处理→模型构建→参数调优→结果验证”）、实验变量与评价指标（如聚类准确率、回归均方误差）。）（200-300字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "实验原理与实验方案",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（简要概述实验涉及的算法原理（无需重复理论推导），明确实验步骤（如“数据预处理→模型构建→参数调优→结果验证”）、实验变量与评价指标（如聚类准确率、回归均方误差）。",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "200-300字",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 19,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    },
+    {
+      "index": 20,
+      "text": "实验过程与代码实现（分步骤阐述实验操作流程，粘贴关键代码（含详细注释），说明代码逻辑（如数据读取、模型训练、异常处理），体现代码规范性与可复用性）（200-300字，不包含具体代码）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "实验过程与代码实现",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（分步骤阐述实验操作流程，粘贴关键代码（含详细注释），说明代码逻辑（如数据读取、模型训练、异常处理），体现代码规范性与可复用性",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "200-300字，不包含具体代码",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 22,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 23,
+      "text": "实验结果与可视化分析（呈现实验结果（如分类准确率、聚类结果图表），通过matplotlib等工具实现结果可视化（如混淆矩阵、聚类散点图），结合代码实现细节解读实验现象）（300-400字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "实验结果与可视化分析",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（呈现实验结果（如分类准确率、聚类结果图表），通过matplotlib等工具实现结果可视化（如混淆矩阵、聚类散点图），结合代码实现细节解读实验现象",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "300-400字",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 25,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 26,
+      "text": "实验总结与反思（总结实验达成的目标、实操收获，反思实验的局限性（如“数据集规模对结果的影响”），提出改进方向（如“引入交叉验证优化模型”）。）（200-300字）",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": [
+        {
+          "text": "实验总结与反思",
+          "bold": true,
+          "font_name": null,
+          "font_size": "152400",
+          "color": null
+        },
+        {
+          "text": "（总结实验达成的目标、实操收获，反思实验的局限性（如“数据集规模对结果的影响”），提出改进方向（如“引入交叉验证优化模型”）。",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）（",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "200-300字",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        },
+        {
+          "text": "）",
+          "bold": null,
+          "font_name": null,
+          "font_size": "152400",
+          "color": "FF0000"
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "text": "",
+      "style": "Normal",
+      "alignment": "JUSTIFY (3)",
+      "runs": []
+    },
+    {
+      "index": 28,
+      "text": "",
+      "style": "Normal",
+      "alignment": "None",
+      "runs": []
+    }
+  ],
+  "tables": [
+    {
+      "index": 0,
+      "rows": 7,
+      "cols": 2,
+      "data": [
+        [
+          "课程名称：",
+          "机器学习实验"
+        ],
+        [
+          "课程编码：",
+          "2351303"
+        ],
+        [
+          "报告题目：",
+          ""
+        ],
+        [
+          "学    号：",
+          ""
+        ],
+        [
+          "姓    名：",
+          ""
+        ],
+        [
+          "班    级：",
+          ""
+        ],
+        [
+          "授课教师：",
+          "曾梦"
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "rows": 5,
+      "cols": 8,
+      "data": [
+        [
+          "评分标准及分值",
+          "评分标准及分值",
+          "选题契合\n（分值15）",
+          "报告内容与代码实现\n（分值40）",
+          "报告内容与代码实现\n（分值40）",
+          "实验分析\n（分值30）",
+          "实验分析\n（分值30）",
+          "报告规范\n（分值15）"
+        ],
+        [
+          "评分",
+          "评分",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整",
+          "注：以上为参考标准，授课教师根据需要对评分标准进行调整"
+        ],
+        [
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n",
+          "评语： \n"
+        ],
+        [
+          "总 评 分",
+          "",
+          "",
+          "评阅教师:",
+          "",
+          "",
+          "评阅时间\n2026年 月 日",
+          "评阅时间\n2026年 月 日"
+        ]
+      ]
+    }
+  ]
+}
